@@ -8,6 +8,7 @@ public class Game {
 	private int lowestValue = 0;
 	private int answer = -1;;
 	
+	private boolean isCheater = false;
 	private int highestValue = 100;
 	private String[] outputC = new String[] { "You WON!", "YOU GOT IT!", "WAY TO GO! YOU WIN!", "WINNER!!!!!", "You Have got It!"};
 	
@@ -31,11 +32,26 @@ public class Game {
 		return answer;
 	}
 	
+	public boolean isGuessCorrect(int inGuess) {
+		if(this.answer == inGuess) { return true; }
+		return false;
+	}
+	
 	public boolean isSetup() {
 		if(this.answer != 0 || this.answer != -1) { return true; }
 		return false;
 	}
 	
+	
+	public void cheatMode() {
+		this.isCheater = true;
+	}
+	public int getAnswer() {
+		if(this.isCheater == true) {
+			return this.answer;
+		}
+		return 0;
+	}
 	
 	
 }
