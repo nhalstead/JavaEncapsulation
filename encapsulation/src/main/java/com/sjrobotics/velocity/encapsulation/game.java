@@ -24,6 +24,11 @@ public class Game {
 		this.answer = generateAnswer();
 	}
 	
+	public void setHigh(int inHighGuess) {
+		this.hightGuess = inHighGuess;
+		this.answer = generateAnswer();
+	}
+	
 	private int generateAnswer() {
 		int answer = -1;
 		Random random = new Random();
