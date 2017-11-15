@@ -47,6 +47,19 @@ public class Game {
 		return false;
 	}
 	
+	public String getHint(int guess) {
+		if(guess > this.answer) {
+			return "Too High!";
+		}
+		else if(guess < this.answer) {
+			return "Too Low!";
+		}
+		else {
+			return "";
+			//return "Hmm you should be Right!";
+		}
+	}
+	
 	
 	public void cheatMode() {
 		this.isCheater = true;

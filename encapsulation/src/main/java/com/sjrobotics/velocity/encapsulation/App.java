@@ -31,8 +31,9 @@ public class App
         	if(newGame.isGuessCorrect(guess)) {
         		break;
         	}
-        	
-        	
+        	else {
+        		System.out.println(newGame.getHint(guess));
+        	}
         }
         
         if(newGame.isGuessCorrect(guess)) {
@@ -40,6 +41,12 @@ public class App
         }else {
         	System.out.println("No more guesses, you lose!!!");
         }
+    }
+    
+    public static void plnB(String in) {
+    	if(in != "") {
+    		System.out.println(in);
+    	}
     }
 
 }
