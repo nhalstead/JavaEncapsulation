@@ -13,7 +13,7 @@ public class App
     public static void main( String[] args ) throws IOException
     {
     	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-    	Game newGame = new Game();
+    	Game newGame = new Game1();
     	
     	System.out.println("Please set a High Guess");
     	newGame.setHigh(Integer.parseInt(in.readLine()));
@@ -37,7 +37,7 @@ public class App
         }
         
         if(newGame.isGuessCorrect(guess)) {
-        	System.out.println("You got it!!");
+        	System.out.println(newGame.getMessage());
         }else {
         	System.out.println("No more guesses, you lose!!!");
         }

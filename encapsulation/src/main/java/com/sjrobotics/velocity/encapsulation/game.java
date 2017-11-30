@@ -4,13 +4,13 @@ import java.util.Random;
 
 public class Game {
 	
-	private int hightGuess = 100;
+	protected int hightGuess = 100;
 	private int lowestValue = 0;
-	private int answer = -1;;
+	protected int answer = -1;;
 	
 	private boolean isCheater = false;
 	private int highestValue = 100;
-	private String[] outputC = new String[] { "You WON!", "YOU GOT IT!", "WAY TO GO! YOU WIN!", "WINNER!!!!!", "You Have got It!"};
+	private static String[] outputC = new String[] { "You WON!", "YOU GOT IT!", "WAY TO GO! YOU WIN!", "WINNER!!!!!", "You Have got It!"};
 	
 	public Game() {
 		this.answer = generateAnswer();
@@ -29,7 +29,7 @@ public class Game {
 		this.answer = generateAnswer();
 	}
 	
-	private int generateAnswer() {
+	protected int generateAnswer() {
 		int answer = -1;
 		Random random = new Random();
 		answer = random.nextInt()%(this.hightGuess + 1);
@@ -71,5 +71,18 @@ public class Game {
 		return 0;
 	}
 	
+	public String getMessage() {
+		return arrayNext(this.outputC);
+	}
+	
+	// https://stackoverflow.com/a/8065554
+    private static int arrayNext(int[] array) {
+        int rnd = new Random().nextInt(array.length);
+        return array[rnd];
+    }
+    private static String arrayNext(String[] array) {
+        int rnd = new Random().nextInt(array.length);
+        return array[rnd];
+    }
 	
 }
